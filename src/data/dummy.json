@@ -1,0 +1,175 @@
+{
+  "user": {
+    "id": "u001",
+    "name": "山田 花子",
+    "email": "hanako.yamada@example.com",
+    "status": "pregnancy",
+    "expectedDate": "2026-03-15"
+  },
+  "pregnancy": {
+    "registrations": [
+      {
+        "id": "pr001",
+        "date": "2025-08-10",
+        "status": "accepted",
+        "content": "第1子妊娠届"
+      }
+    ],
+    "consultations": [
+      {
+        "id": "pc001",
+        "date": "2025-09-01",
+        "type": "initial",
+        "status": "completed",
+        "notes": "体調良好"
+      },
+      {
+        "id": "pc002",
+        "date": "2025-12-10",
+        "type": "mid-term",
+        "status": "scheduled",
+        "notes": ""
+      }
+    ]
+  },
+  "childbirth": {
+    "notifications": [],
+    "consultations": []
+  },
+  "childcare": {
+    "nurseries": [
+      {
+        "id": "n001",
+        "name": "ひまわり保育園",
+        "address": "東京都〇〇区〇〇1-1",
+        "vacancy": {
+          "0yr": 0,
+          "1yr": 2,
+          "2yr": 1,
+          "3yr": 5
+        },
+        "coordinates": {
+          "lat": 35.6895,
+          "lng": 139.6917
+        }
+      },
+      {
+        "id": "n002",
+        "name": "さくら保育園",
+        "address": "東京都〇〇区〇〇2-2",
+        "vacancy": {
+          "0yr": 1,
+          "1yr": 0,
+          "2yr": 0,
+          "3yr": 2
+        },
+        "coordinates": {
+          "lat": 35.6890,
+          "lng": 139.6920
+        }
+      }
+    ],
+    "consultations": []
+  },
+  "todos": [
+    {
+      "id": "t001",
+      "category": "pregnancy",
+      "title": "妊娠届の提出",
+      "description": "お住まいの自治体に妊娠届を提出し、母子健康手帳を受け取りましょう。",
+      "completed": true,
+      "dueDate": "2025-08-31",
+      "relatedLink": "/pregnancy"
+    },
+    {
+      "id": "t002",
+      "category": "pregnancy",
+      "title": "妊娠相談の予約",
+      "description": "保健師や助産師との面談を予約し、妊娠中の不安や悩みについて相談しましょう。",
+      "completed": true,
+      "dueDate": "2025-09-15",
+      "relatedLink": "/pregnancy"
+    },
+    {
+      "id": "t003",
+      "category": "pregnancy",
+      "title": "妊婦健診の受診",
+      "description": "定期的に妊婦健診を受け、母子の健康状態を確認しましょう。",
+      "completed": false,
+      "dueDate": "2025-12-10",
+      "relatedLink": "/pregnancy"
+    },
+    {
+      "id": "t004",
+      "category": "pregnancy",
+      "title": "プレママ講座の受講",
+      "description": "出産や育児に関する知識を学ぶための講座に参加しましょう。",
+      "completed": false,
+      "dueDate": "2026-01-20",
+      "relatedLink": "/pregnancy"
+    },
+    {
+      "id": "t005",
+      "category": "childbirth",
+      "title": "出生連絡票の提出",
+      "description": "赤ちゃんが生まれたら、速やかに出生連絡票を提出しましょう。",
+      "completed": false,
+      "dueDate": "2026-03-20",
+      "relatedLink": "/childbirth"
+    },
+    {
+      "id": "t006",
+      "category": "childbirth",
+      "title": "出生届の提出",
+      "description": "生まれた日から14日以内に役所へ出生届を提出してください。",
+      "completed": false,
+      "dueDate": "2026-03-29",
+      "relatedLink": "/childbirth"
+    },
+    {
+      "id": "t007",
+      "category": "childbirth",
+      "title": "児童手当の手続き",
+      "description": "児童手当の受給資格認定請求書を提出しましょう。",
+      "completed": false,
+      "dueDate": "2026-03-31",
+      "relatedLink": "/childbirth"
+    },
+    {
+      "id": "t008",
+      "category": "childbirth",
+      "title": "子ども医療証の手続き",
+      "description": "子どもの医療費助成を受けるための医療証の交付申請を行いましょう。",
+      "completed": false,
+      "dueDate": "2026-03-31",
+      "relatedLink": "/childbirth"
+    },
+    {
+      "id": "t009",
+      "category": "childcare",
+      "title": "保育園の候補を決める",
+      "description": "通園可能な範囲にある保育園をリストアップし、希望順位を検討しましょう。",
+      "completed": false,
+      "dueDate": "2026-01-31",
+      "relatedLink": "/childcare"
+    },
+    {
+      "id": "t010",
+      "category": "childcare",
+      "title": "保育園の見学",
+      "description": "実際に保育園を見学し、雰囲気や設備を確認しましょう。",
+      "completed": false,
+      "dueDate": "2026-02-28",
+      "relatedLink": "/childcare"
+    },
+    {
+      "id": "t011",
+      "category": "childcare",
+      "title": "点数計算（シミュレーション）",
+      "description": "認可保育園の入園選考における持ち点を計算し、入園の可能性を確認しましょう。",
+      "completed": false,
+      "dueDate": "2026-02-15",
+      "relatedLink": "/childcare"
+    }
+  ]
+}
