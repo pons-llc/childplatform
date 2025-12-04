@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import TopPage from './pages/TopPage';
 import PregnancyPage from './pages/PregnancyPage';
@@ -10,7 +10,7 @@ import TodoPage from './pages/TodoPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<TopPage />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="todo" element={<TodoPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
