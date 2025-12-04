@@ -71,7 +71,7 @@ childcarepf/
 - 提出方法・期限
 
 ## デモサイト
-デモページURL: `https://********************`
+デモページURL: `https://pons-llc.github.io/childplatform/#/`
 
 ## 今後の展開
 このデモは、以下のような発展が想定されます：
