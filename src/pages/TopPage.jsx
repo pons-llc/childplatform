@@ -16,28 +16,18 @@ const TopPage = () => {
                 backgroundColor: '#fff0f5',
                 padding: '2rem',
                 borderRadius: 'var(--radius-md)',
-                marginBottom: '2rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
+                marginBottom: '2rem'
             }}>
-                <div>
-                    <h1 style={{ margin: 0, fontSize: '1.8rem', color: '#d48795' }}>こんにちは、{user.name}さん</h1>
-                    <p style={{ marginTop: '0.5rem', color: '#666' }}>
-                        出産予定日まであと <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#ff8ba7' }}>101</span> 日です
-                    </p>
-                </div>
-                <div style={{
-                    width: '100px',
-                    height: '100px',
-                    backgroundColor: 'white',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: 'var(--shadow-sm)'
-                }}>
-                    <span style={{ fontSize: '3rem' }}>🤰</span>
+                <h1 style={{ margin: '0 0 1.5rem 0', fontSize: '1.8rem', color: '#d48795' }}>こんにちは、{user.name}さん</h1>
+
+                <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: 'var(--radius-sm)' }}>
+                    <iframe
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                        src="https://www.youtube.com/embed/b6b9sCXtqc0"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                    ></iframe>
                 </div>
             </div>
 
