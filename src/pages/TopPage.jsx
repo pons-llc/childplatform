@@ -41,7 +41,7 @@ const TopPage = () => {
                 </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+            <div className="top-page-grid">
                 <div>
                     <h2 style={{ borderBottom: '2px solid #ffe4e1', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
                         お知らせ

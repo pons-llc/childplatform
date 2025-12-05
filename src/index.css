@@ -1,17 +1,22 @@
 :root {
-  --color-primary: #ffb7b2; /* Soft Pink */
-  --color-secondary: #a2e8dd; /* Soft Teal */
-  --color-accent: #fffdd0; /* Cream */
-  --color-text: #4a4a4a; /* Soft Black */
-  --color-background: #fff9f9; /* Very light pinkish white */
+  --color-primary: #ffb7b2;
+  /* Soft Pink */
+  --color-secondary: #a2e8dd;
+  /* Soft Teal */
+  --color-accent: #fffdd0;
+  /* Cream */
+  --color-text: #4a4a4a;
+  /* Soft Black */
+  --color-background: #fff9f9;
+  /* Very light pinkish white */
   --color-white: #ffffff;
-  
+
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
-  
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 8px rgba(0,0,0,0.08);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 body {
@@ -23,8 +28,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #7d5a5a; /* Brownish text for headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #7d5a5a;
+  /* Brownish text for headers */
 }
 
 a {
@@ -42,4 +53,70 @@ button {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Responsive Grid for Top Page */
+.top-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Mobile Navigation Styles */
+.mobile-menu-button {
+  display: none;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.mobile-nav-overlay {
+  display: none;
+  /* Hidden by default */
+}
+
+@media (max-width: 768px) {
+  .top-page-grid {
+    grid-template-columns: 1fr;
+    /* 1 column on mobile */
+  }
+
+  .mobile-menu-button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff8ba7;
+  }
+
+  .desktop-nav {
+    display: none;
+    /* Hide desktop nav on mobile */
+  }
+
+  .mobile-nav-overlay {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    /* Adjust based on header height */
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    border-bottom: 2px solid #fff0f5;
+  }
+
+  .mobile-nav-overlay a {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+  }
 }

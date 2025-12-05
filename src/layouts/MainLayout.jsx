@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Menu, Home, Baby, Heart, Calendar, CheckSquare } from 'lucide-react';
+import { Menu, X, Home, Baby, Heart, Calendar, CheckSquare } from 'lucide-react';
 
 const MainLayout = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -16,15 +18,32 @@ const MainLayout = () => {
             <span>妊娠・出産・保育プラットフォームデモ</span>
           </Link>
 
-          <nav style={{ display: 'flex', gap: '1.5rem' }}>
+          {/* Desktop Navigation */}
+          <nav className="desktop-nav">
             <NavLink to="/" icon={<Home size={20} />} label="ホーム" active={isActive('/')} />
             <NavLink to="/todo" icon={<CheckSquare size={20} />} label="やること" active={isActive('/todo')} />
             <NavLink to="/pregnancy" icon={<Baby size={20} />} label="妊娠" active={isActive('/pregnancy')} />
             <NavLink to="/childbirth" icon={<Heart size={20} />} label="出産" active={isActive('/childbirth')} />
             <NavLink to="/childcare" icon={<Menu size={20} />} label="保育" active={isActive('/childcare')} />
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button className="mobile-menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </header>
+
+      {/* Mobile Navigation Overlay */}
+      {isMenuOpen && (
+        <nav className="mobile-nav-overlay">
+          <MobileNavLink to="/" icon={<Home size={20} />} label="ホーム" active={isActive('/')} onClick={closeMenu} />
+          <MobileNavLink to="/todo" icon={<CheckSquare size={20} />} label="やること" active={isActive('/todo')} onClick={closeMenu} />
+          <MobileNavLink to="/pregnancy" icon={<Baby size={20} />} label="妊娠" active={isActive('/pregnancy')} onClick={closeMenu} />
+          <MobileNavLink to="/childbirth" icon={<Heart size={20} />} label="出産" active={isActive('/childbirth')} onClick={closeMenu} />
+          <MobileNavLink to="/childcare" icon={<Menu size={20} />} label="保育" active={isActive('/childcare')} onClick={closeMenu} />
+        </nav>
+      )}
 
       <main style={{ flex: 1, padding: '2rem 0' }}>
         <div className="container">
@@ -34,7 +53,7 @@ const MainLayout = () => {
 
       <footer style={{ backgroundColor: '#fff0f5', padding: '2rem 0', marginTop: 'auto' }}>
         <div className="container" style={{ textAlign: 'center', color: '#888' }}>
-          <p>© 2025 MamaCare Platform. All rights reserved.</p>
+          <p>© 2025 合同会社Pons. All rights reserved. ※デモサイトですご自由にご利用ください。</p>
         </div>
       </footer>
     </div>
@@ -51,6 +70,20 @@ const NavLink = ({ to, icon, label, active }) => (
       gap: '4px',
       color: active ? '#ff8ba7' : '#888',
       fontSize: '0.8rem',
+      fontWeight: active ? 'bold' : 'normal'
+    }}
+  >
+    {icon}
+    <span>{label}</span>
+  </Link>
+);
+
+const MobileNavLink = ({ to, icon, label, active, onClick }) => (
+  <Link
+    to={to}
+    onClick={onClick}
+    style={{
+      color: active ? '#ff8ba7' : '#4a4a4a',
       fontWeight: active ? 'bold' : 'normal'
     }}
   >
